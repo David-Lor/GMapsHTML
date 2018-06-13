@@ -33,19 +33,17 @@ function initMap() {
     center: new google.maps.LatLng(mapdata.center[0], mapdata.center[1]),
     mapTypeId: 'roadmap'
   });
-  
 
   var icons = {
     marker : {
-      icon : "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+      icon : "https://maps.google.com/mapfiles/kml/shapes/bus.png"
     },
     center : {
-        icon : "http://maps.google.com/mapfiles/kml/paddle/blu-stars.png"
+        icon : "https://maps.google.com/mapfiles/kml/paddle/blu-stars.png"
     }
   };
 
   var features = [];
-
   for (var i=0; i<mapdata.markers.length; i++) {
     var marker = mapdata.markers[i];
     features[i] = {
@@ -55,7 +53,6 @@ function initMap() {
     }
   }
 
-  // Create markers.
   features.forEach(function(feature) {
     var marker = new google.maps.Marker({
       position : feature.position,
@@ -64,4 +61,5 @@ function initMap() {
       label : feature.label
     });
   });
+
 }

@@ -14,8 +14,7 @@
 
 var map;
 var mapdata;
-var url = window.location.href;
-var urlSplit = url.split("?");
+var urlSplit = window.location.href.split("?");
 
 if (urlSplit.length < 2) {
   document.write("<h1>No BASE64 JSON given in URL!</h1>")
@@ -24,9 +23,6 @@ if (urlSplit.length < 2) {
   var jsonString = atob(urlSplit[1]);
   mapdata = JSON.parse(jsonString);
 }
-
-var map;
-var mapdata;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {

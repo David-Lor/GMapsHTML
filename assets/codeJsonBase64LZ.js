@@ -17,9 +17,10 @@ var mapdata;
 var urlSplit = window.location.href.split("?");
 
 if (urlSplit.length < 2) {
-  document.write("<h1>No JSON given in URL!</h1>")
+  document.write("<h1>No BASE64+LZ JSON given in URL!</h1>")
 } else {
-  var jsonString = decodeURI(urlSplit[1]);
+  var lz64string = urlSplit[1];
+  var jsonString = LZString.decompressFromBase64(lz64string);
   mapdata = JSON.parse(jsonString);
 }
 

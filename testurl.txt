@@ -1,1 +1,0 @@
-https://enforcerzhukov.github.io/GMapsHTML/GoogleMap.html?{"center" : [42.2322022750622, -8.70379224637247], "markers" : [{"pos" : [42.2338280858528, -8.70631124156336], "label" : "8580", "symbol" : "marker"}, {"pos":[42.2322022750622, -8.70379224637247], "label":"centro", "symbol":"center"}]}

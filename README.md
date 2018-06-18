@@ -6,9 +6,15 @@ A webpage that implements the Google Maps JavaScript API, for loading a full map
 
 ## Google Maps API Key
 
-A key is required to use the Google Maps Javascript API. On the HTML files of this repository my key is set, but it's limited to only accept requests from my Github domain (https://enforcerzhukov.github.io/*).
+A key is required to use the Google Maps Javascript API. On the HTML files of this repository my key is set, but it's limited to only accept requests from my Github domain (https://enforcerzhukov.github.io/*). However, for testing purposes, you can use my hosted page with your own set of markers.
 
-Register a free API key at: https://developers.google.com/maps/documentation/javascript/get-api-key
+Once you're ready to go, you can register a free API key at: https://developers.google.com/maps/documentation/javascript/get-api-key
+
+Remember to replace the API Key on the HTML file with your own key, and if you want to, restrict API access to your own page/domain.
+
+## URL Length Limit
+
+Keep in mind that some browsers can have trouble with the URL length limit (i.e. [read this](https://stackoverflow.com/questions/15090220/maximum-length-for-url-in-chrome-browser)).
 
 ## JSON Format
 
@@ -81,6 +87,5 @@ https://enforcerzhukov.github.io/GMapsHTML/GMapJSON64LZ.html?N4IgxgpgdgLhBOIAEAu
 * Show errors when input variable is wrong (bad JSON string)
 * Show error when Google Maps API requests limit is reached
 * Unify both JSON and JSON+BASE64 scripts into one
-* Support string compression for shorter URLs
 * Change icons and text in map
 * Add cards for each marker, if possible

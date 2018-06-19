@@ -1,7 +1,7 @@
 
 var icons = [
-  "https://maps.google.com/mapfiles/kml/shapes/bus.png",
-  "https://maps.google.com/mapfiles/kml/paddle/blu-stars.png"
+  "https://maps.google.com/mapfiles/kml/paddle/blu-stars.png",
+  "https://maps.google.com/mapfiles/kml/shapes/bus.png"
 ];
 
 function initMap() {

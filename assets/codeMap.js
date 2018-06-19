@@ -25,7 +25,7 @@ function initMap() {
   features.forEach(function(feature) {
     var marker = new google.maps.Marker({
     position : feature.position,
-    icon : icons[iconIndex],
+    icon : icons[feature.iconIndex],
     map : map,
     label : feature.label
     });

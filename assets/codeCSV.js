@@ -1,6 +1,6 @@
 
 const DELIMITER_VALUES = ',';
-const DELIMITER_LINES = '&&';
+const DELIMITER_LINES = '$$';
 
 var center;
 var markers = [];

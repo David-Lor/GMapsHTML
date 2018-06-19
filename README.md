@@ -4,7 +4,7 @@ A webpage that implements the Google Maps JavaScript API, for loading a full map
 
 The markers are set as a CSV string, attached to the URL after the ? mark. Check the "json" branch to see this project made using JSON strings, which result in longer URLs.
 
-[Test](https://enforcerzhukov.github.io/GMapsHTML/GMapCSV.html?)
+[Test](https://enforcerzhukov.github.io/GMapsHTML/GMapCSV.html?42.2322022750622,-8.70379224637247,0,0$$42.2322022750622,-8.70379224637247,You%20are%20here,0$$42.2338280858528,-8.70631124156336,Stop%201,0)
 
 ## Google Maps API Key
 
@@ -33,9 +33,9 @@ latitude,longitude,label,symbol
 * The label is a string to describe the marker on the map
 * The symbol is the index of the array of symbols defined on codeMap.js
 
-Now, we remove the header and split each line with && (symbols to split both values and lines can be changed on codeCSV.js). The URL looks like this (spaces are represented with %20 but should work with just spaces):
+Now, we remove the header and split each line with $$ (symbols to split both values and lines can be changed on codeCSV.js). The URL looks like this (spaces are represented with %20 but should work with just spaces):
 
-https://enforcerzhukov.github.io/GMapsHTML/GMapCSV.html?42.2322022750622,-8.70379224637247,0,0&&42.2322022750622,-8.70379224637247,You%20are%20here,0&&42.2338280858528,-8.70631124156336,Stop%201,0
+https://enforcerzhukov.github.io/GMapsHTML/GMapCSV.html?42.2322022750622,-8.70379224637247,0,0$$42.2322022750622,-8.70379224637247,You%20are%20here,0$$42.2338280858528,-8.70631124156336,Stop%201,0
 
 ## TODO
 

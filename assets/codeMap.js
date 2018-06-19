@@ -4,9 +4,8 @@ var icons = [
   "https://maps.google.com/mapfiles/kml/paddle/blu-stars.png"
 ];
 
-getCSV();
-
 function initMap() {
+  getCSV();
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 16,
     center: new google.maps.LatLng(center.lat, center.lon),
@@ -32,4 +31,4 @@ function initMap() {
     });
   });
   
-  }
+}

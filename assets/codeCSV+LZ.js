@@ -13,7 +13,7 @@ function getCSV() {
   }
   
   var b64lz = urlSplit[1];
-  var csv = decodeURI(LZString.decodeFromBase64(b64lz));
+  var csv = decodeURI(LZString.decompressFromBase64(b64lz));
   var lines = csv.split(DELIMITER_LINES)
   var first = true;
   

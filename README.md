@@ -77,6 +77,22 @@ And finally the URL looks like this:
 
 https://enforcerzhukov.github.io/GMapsHTML/GMapCSV.html?42.2322022750622,-8.70379224637247,0,0$$42.2322022750622,-8.70379224637247,You%20are%20here,0$$42.2320281879469,-8.70820377625742,Stop%201,1$$42.2312737858673,-8.70014564481647,Stop%202,1$$42.2313792020047,-8.69987621275715,Stop%203,1$$42.2322537917903,-8.70720857463104,Stop%204,1$$42.230108907829,-8.70723003230316,Stop%205,1$$42.2322585141846,-8.70577062094617,Stop%206,1$$42.2320420427629,-8.70361680710721,Stop%207,1$$42.2324789583539,-8.70198870623517,Stop%208,1$$42.2331740458066,-8.70238030875134,Stop%209,1$$42.2327484139652,-8.70253965476252,Stop%2010,1$$42.2323869903522,-8.70561078408457,Stop%2011,1$$42.2301345036251,-8.70699265630455,Stop%2012,1$$42.2315840973352,-8.7069685208686,Stop%2013,1$$42.2338280858528,-8.70631124156336,Stop%2014,1$$42.2336812237455,-8.70670213621358,Stop%2015,1
 
+## CSV Format + Base64 encoding + LZ compressing
+
+To save a few characters on the URL, we can use the [lz-string](http://pieroxy.net/blog/pages/lz-string/index.html) library to compress the CSV string with LZ compression. This library can compress and Base64Encode a string directly, and decode it returning the string as well. The encoding must be done when generating the URL, so [take a look at the libraries available for different programming languages to compress with LZ](http://pieroxy.net/blog/pages/lz-string/index.html).
+
+On the previous example (the longer CSV string with more markers), the string length is of 802 characters. After B64 encoding and LZ compressing, the string length is of 532 characters (we saved 270 characters). On short strings the compression won't work so good (the first string example has the same length with and without B64+LZ compression).
+
+So, after B64 encoding and LZ compressing the long CSV string with any of the available LZ libraries (using the compressToBase64 method), the result string is the following:
+
+```
+CwJgdCDMIgDDB2ArLAbDANAWgBxgbJAgJwzCpEjAIay0Ak9oE0ciK6I2eBRpVFBFRoBNAPYBXAKRwAhgCcApjNgALRUoZNwUNjgCMOEuWLd8sHHCIJ0SBKAwBlAC5iADiv0Z9jZlH0gCEQ4SDioQWYEsPrASKjAwAbxNC7uKlw+2iz6GywsNRmqMTERugByAj6SE6uHlbevjqsSHz6JISRsEIWduSQ+gW1aXDAjVlQ0RbE3ZamuOZCkPnQywOow/WwNZl+LSExhuRddgTosMTk7ZsqG7vNo482IPM8hKj6qDjdg0JeqVsaPcWMIcMRQpBWq9zPpSkY0FAkNcASocOM9gN7AVQmgNgsCFBvsjEjIGMUXBTMDdPYcMAcsRUEguPj4FCmdRbFwKVN0Q9IGESoRmSy3nFfnSLLEUnVPF5qcscrF3iAkV1iqQmRRsTUeQE+dlQsALkFIaLzMUvsyLF8NnrIAaoAKQN8QiEXeqBgF6XFIJA7bK4DFHX6vgEoPYkDVWeF4DlypC0XqdkA
+```
+
+And the final URL is the following:
+
+https://enforcerzhukov.github.io/GMapsHTML/GMapCSV+LZ.html?CwJgdCDMIgDDB2ArLAbDANAWgBxgbJAgJwzCpEjAIay0Ak9oE0ciK6I2eBRpVFBFRoBNAPYBXAKRwAhgCcApjNgALRUoZNwUNjgCMOEuWLd8sHHCIJ0SBKAwBlAC5iADiv0Z9jZlH0gCEQ4SDioQWYEsPrASKjAwAbxNC7uKlw+2iz6GywsNRmqMTERugByAj6SE6uHlbevjqsSHz6JISRsEIWduSQ+gW1aXDAjVlQ0RbE3ZamuOZCkPnQywOow/WwNZl+LSExhuRddgTosMTk7ZsqG7vNo482IPM8hKj6qDjdg0JeqVsaPcWMIcMRQpBWq9zPpSkY0FAkNcASocOM9gN7AVQmgNgsCFBvsjEjIGMUXBTMDdPYcMAcsRUEguPj4FCmdRbFwKVN0Q9IGESoRmSy3nFfnSLLEUnVPF5qcscrF3iAkV1iqQmRRsTUeQE+dlQsALkFIaLzMUvsyLF8NnrIAaoAKQN8QiEXeqBgF6XFIJA7bK4DFHX6vgEoPYkDVWeF4DlypC0XqdkA
+
 ## TODO
 
 * Display errors when input variable is wrong (bad CSV string)

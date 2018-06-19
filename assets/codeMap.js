@@ -13,7 +13,7 @@ function initMap() {
   });
 
   var features = [];
-  for (var i=0; i<mapdata.markers.length; i++) {
+  for (var i=0; i<markers.length; i++) {
     var marker = markers[i];
     features[i] = {
       position : new google.maps.LatLng(marker.lat, marker.lon),
